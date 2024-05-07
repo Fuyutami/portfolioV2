@@ -214,16 +214,13 @@ const Contact = (props) => {
   const submitHandler = (e) => {
     e.preventDefault()
 
-    console.log(process.env.EMAILJS_SERVICE_ID)
+    const serviceID = process.env.EMAILJS_SERVICE_ID
+    const templateID = process.env.EMAILJS_TEMPLATE_ID
+    const publicKey = process.env.EMAILJS_KEY
     emailjs
-      .sendForm(
-        process.env.EMAILJS_SERVICE_ID,
-        process.env.EMAILJS_TEMPLATE_ID,
-        form.current,
-        {
-          publicKey: process.env.EMAILJS_KEY,
-        }
-      )
+      .sendForm(serviceID, templateID, form.current, {
+        publicKey: publicKey,
+      })
       .then(
         () => {
           console.log("SUCCESS!")
