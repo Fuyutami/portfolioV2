@@ -214,9 +214,9 @@ const Contact = (props) => {
   const submitHandler = (e) => {
     e.preventDefault()
 
-    const serviceID = process.env.EMAILJS_SERVICE_ID
-    const templateID = process.env.EMAILJS_TEMPLATE_ID
-    const publicKey = process.env.EMAILJS_KEY
+    const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID
+    const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID
+    const publicKey = process.env.REACT_APP_EMAILJS_KEY
     emailjs
       .sendForm(serviceID, templateID, form.current, {
         publicKey: publicKey,
