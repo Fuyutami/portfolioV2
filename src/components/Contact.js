@@ -167,8 +167,8 @@ const Contact = (props) => {
   const form = React.createRef()
   const navigate = useNavigate()
   const [state, setState] = useState({
-    name: "",
-    email: "",
+    user_name: "",
+    user_email: "",
     message: "",
     nameValid: false,
     emailValid: false,
@@ -180,7 +180,7 @@ const Contact = (props) => {
 
   useEffect(() => {
     validate()
-  }, [state.name, state.email, state.message])
+  }, [state.user_name, state.user_email, state.message])
 
   useEffect(() => {
     if (state.submitted === false) return
@@ -197,8 +197,8 @@ const Contact = (props) => {
   }
 
   const validate = () => {
-    const nameIsValid = state.name != ""
-    const emailIsValid = /\S+@\S+\.\S+/.test(state.email.toLowerCase())
+    const nameIsValid = state.user_name != ""
+    const emailIsValid = /\S+@\S+\.\S+/.test(state.user_email.toLowerCase())
     const messageIsValid = state.message != ""
     const formIsValid = nameIsValid && emailIsValid && messageIsValid
 
