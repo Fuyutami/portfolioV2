@@ -214,6 +214,7 @@ const Contact = (props) => {
   const submitHandler = (e) => {
     e.preventDefault()
 
+    console.log(process.env.EMAILJS_SERVICE_ID)
     emailjs
       .sendForm(
         process.env.EMAILJS_SERVICE_ID,
