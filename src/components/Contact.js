@@ -67,9 +67,10 @@ const Form = styled.form`
 `
 const TextWrapper = styled.div`
   margin-bottom: 3rem;
+  transform: scale(0.7) translateX(-20%);
 `
 const Text = styled(TextHi)`
-  max-width: 300px;
+  min-width: 300px;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   & > path {
@@ -87,7 +88,7 @@ const InputS = styled.input`
   border: 1px solid;
   border-color: ${(props) =>
     !props.showError ? Theme.text : !props.isValid ? Theme.error : Theme.text};
-  border-radius: 5px;
+  border-radius: 2px;
   position: relative;
   padding: 1.2rem 1rem;
   width: 100%;
@@ -115,7 +116,7 @@ const InputMsg = styled.textarea`
   border: 1px solid;
   border-color: ${(props) =>
     !props.showError ? Theme.text : !props.isValid ? Theme.error : Theme.text};
-  border-radius: 5px;
+  border-radius: 2px;
   background-color: transparent;
   padding: 1.2rem 1rem;
   position: relative;
@@ -132,19 +133,19 @@ const InputMsg = styled.textarea`
   /* width */
   ::-webkit-scrollbar {
     width: 8px;
-    border-radius: 5px;
+    border-radius: 2px;
   }
 
   /* Track */
   ::-webkit-scrollbar-track {
     background: ${Theme.inactiveSkill};
-    border-radius: 5px;
+    border-radius: 2px;
   }
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: ${Theme.text2};
-    border-radius: 5px;
+    border-radius: 2px;
   }
 
   /* Handle on hover */
@@ -154,13 +155,17 @@ const InputMsg = styled.textarea`
 `
 const Btn = styled.button`
   display: flex;
-  background-color: ${(props) =>
-    props.inactive ? Theme.inactiveSkill : Theme.text};
+  background-color: ${Theme.text};
   border: none;
-  border-radius: 10px;
+  border-radius: 2px;
   align-self: flex-start;
   padding: 1rem 4rem;
   cursor: pointer;
+
+  &:disabled {
+    background-color: ${Theme.inactiveSkill};
+    cursor: not-allowed;
+  }
 `
 
 const Contact = (props) => {
@@ -306,7 +311,7 @@ const Contact = (props) => {
               </FieldL>
               <Btn
                 type="submit"
-                inactive={!state.formValid}
+                disabled={!state.formValid}
                 onClick={(e) => {
                   submitHandler(e)
                 }}

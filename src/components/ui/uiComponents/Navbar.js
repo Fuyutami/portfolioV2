@@ -119,6 +119,7 @@ const Indicator = styled.div`
   display: flex;
   align-items: center;
   position: absolute;
+  z-index: 1000;
   bottom: 30px;
   right: 160px;
   height: 10px;
@@ -134,71 +135,55 @@ const ArrowsContainer = styled.div`
   animation: ${arrowsAnimation} 1s step-start infinite;
 `
 
-// State variables
-// const orders = [
-// 	[0, 1, 2, 3],
-// 	[1, 0, 2, 3],
-// 	[1, 2, 0, 3],
-// 	[1, 2, 3, 0],
-// ]
-// const initialiseState = () => {
-// 	const path = window.location.pathname
-// 	const state = {
-// 		current: undefined,
-// 		hover: null,
-// 		order: [],
-// 	}
-// 	switch (path) {
-// 		case '/':
-// 			state.order = orders[0]
-// 			state.current = pages[0]
-// 			break
-// 		case '/skills':
-// 			state.order = orders[1]
-// 			state.current = pages[1]
-// 			break
-// 		case '/projects':
-// 			state.order = orders[2]
-// 			state.current = pages[2]
-// 			break
-// 		case '/contact':
-// 			state.order = orders[3]
-// 			state.current = pages[3]
-// 			break
-// 	}
-// 	return state
-// }
+const initialiseState = () => {
+  const path = window.location.pathname
+  const state = {
+    current: undefined,
+    hover: null,
+  }
+  switch (path) {
+    case "/":
+      state.current = pages[0]
+      break
+    case "/skills":
+      state.current = pages[1]
+      break
+    case "/contact":
+      state.current = pages[2]
+      break
+  }
+  return state
+}
 
-// let initialState = initialiseState()
+let initialState = initialiseState()
 
-// const reducer = (state, { event, el }) => {
-// 	if (event === 'click')
-// 		return {
-// 			...state,
-// 			current: pages[el],
-// 			order: orders[el],
-// 		}
-// 	if (event === 'hover')
-// 		return {
-// 			...state,
-// 			hover: el,
-// 		}
-// 	if (event === 'set') {
-// 		return {
-// 			...initialState,
-// 		}
-// 	}
-// }
+const reducer = (state, { event, el }) => {
+  if (event === "click")
+    return {
+      ...state,
+      current: pages[el],
+    }
+  if (event === "hover")
+    return {
+      ...state,
+      hover: el,
+    }
+  if (event === "set") {
+    return {
+      ...initialState,
+    }
+  }
+}
 
 //Component
 const Navbar = () => {
-  //   const [state, dispatch] = useReducer(reducer, initialState)
-  //   const location = useLocation()
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const location = useLocation()
 
-  //   useEffect(() => {
-  //     initialState = initialiseState()
-  //     dispatch({ event: "set", el: null })
-  //   }, [location])
+  useEffect(() => {
+    initialState = initialiseState()
+    dispatch({ event: "set", el: null })
+  }, [location])
 
   return (
     <>
@@ -240,7 +225,7 @@ const Navbar = () => {
           })}
         </ArrowsContainer>
 
-        {/* <state.current.title key={randomID()} fill={Theme.text} /> */}
+        <state.current.title key={randomID()} fill={Theme.text} />
       </Indicator>
     </>
   )
