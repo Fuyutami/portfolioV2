@@ -94,10 +94,12 @@ const Content = styled.div`
 const TitleWrapper = styled.div`
   opacity: 0;
   height: 32%;
+  width: 300px;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: flex-start;
   animation: ${({ state }) => {
       switch (state) {
         case "entering":
@@ -111,9 +113,14 @@ const TitleWrapper = styled.div`
       }
     }}
     0.5s 0.5s step-end forwards;
-  transform: scale(0.7) translateX(-20%) skew(-12deg, 0deg);
+  transform: scale(0.6) translateX(-100px) skew(-12deg, 0deg);
 `
-const Title = styled.img``
+const Title = styled.img`
+  height: 40px;
+  @media (max-width: 700px) {
+    height: 25px;
+  }
+`
 
 const Description = styled.p`
   opacity: 0;
