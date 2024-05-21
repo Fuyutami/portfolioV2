@@ -108,7 +108,7 @@ const InputS = styled.input`
 const FieldL = styled.div`
   position: relative;
   width: 100%;
-  height: 130px;
+  height: 10vh;
   margin-top: 0.5rem;
   margin-bottom: 4rem;
 `

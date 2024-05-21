@@ -80,6 +80,12 @@ const Nav = styled.nav`
   bottom: 95px;
   width: 40px;
   height: 150px;
+
+  @media (max-height: 400px) {
+    height: 130px;
+    transform: scale(0.8);
+    bottom: 55px;
+  }
 `
 const List = styled.ul`
   list-style: none;

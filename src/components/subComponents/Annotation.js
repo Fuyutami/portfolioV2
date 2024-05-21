@@ -26,6 +26,10 @@ const Container = styled.div`
       }
     }}
     0.3s step-end forwards;
+
+  @media (max-width: 768px) {
+    transform: scale(0.8);
+  }
 `
 const GraphicsWrapper = styled.div`
   position: absolute;
@@ -117,9 +121,6 @@ const TitleWrapper = styled.div`
 `
 const Title = styled.img`
   height: 40px;
-  @media (max-width: 700px) {
-    height: 25px;
-  }
 `
 
 const Description = styled.p`

@@ -30,6 +30,10 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 80%;
+
+  @media (max-width: 780px) {
+    transform: translateX(-50px);
+  }
 `
 
 const CarouselsContainer = styled.div`

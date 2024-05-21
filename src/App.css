@@ -10,13 +10,18 @@ html {
   font-size: 62.5%;
 }
 
+:root {
+  --vh: 1vh;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   background-color: #fff;
   font-size: 1.8rem;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100vw;
-  overflow: hidden;
+  overflow: auto;
 }
 
 #root {

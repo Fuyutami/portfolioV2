@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styled, { keyframes } from "styled-components"
 
 import useWindowSize from "../../../hooks/useWindowSize"
@@ -64,12 +64,22 @@ const Frame = (props) => {
   const diagonal1 = Math.sqrt(Math.pow(25, 2) / 2)
   const diagonal2 = Math.sqrt(Math.pow(55, 2) / 2)
 
+  const [navbarSpace, setNavbarSpace] = React.useState(0)
+
+  useEffect(() => {
+    console.log(height)
+    if (height < 400) {
+      setNavbarSpace(90)
+    } else {
+      setNavbarSpace(188)
+    }
+  }, [height])
   ;(() => {
     points.push([width - 160, height - 17])
     points.push([width - 34, height - 17])
     points.push([points[1][0] + diagonal1, points[1][1] - diagonal1])
     points.push([points[2][0] - diagonal2, points[2][1] - diagonal2])
-    points.push([points[3][0], points[3][1] - 188])
+    points.push([points[3][0], points[3][1] - navbarSpace])
     points.push([points[4][0] + diagonal2, points[4][1] - diagonal2])
     points.push([points[5][0], 17 + diagonal2])
     points.push([points[6][0] - diagonal2, points[6][1] - diagonal2])
