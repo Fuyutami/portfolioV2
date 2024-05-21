@@ -210,18 +210,33 @@ const Carousel = forwardRef((props, ref) => {
         y: e.clientY || e.touches[0].clientY,
       }
     }
+    const initializeCarousel = () => {
+      loadImages(props.images, (images) => {
+        updateStateWithImages(images)
+      })
+    }
+
+    const updateStateWithImages = (images) => {
+      stateRef.current.items.forEach((item, idx) => {
+        item.image = images[idx]
+      })
+      requestIdRef.current = requestAnimationFrame(animate)
+    }
 
     // define canvas size
     stateRef.current.size.height =
       stateRef.current.size.width * props.images.length
 
+    // initialize carousel
+    initializeCarousel()
+
     // Load images and start animating
-    loadImages(props.images, (images) => {
-      stateRef.current.items.forEach((item, idx) => {
-        item.image = images[idx]
-      })
-      requestIdRef.current = requestAnimationFrame(animate)
-    })
+    // loadImages(props.images, (images) => {
+    //   stateRef.current.items.forEach((item, idx) => {
+    //     item.image = images[idx]
+    //   })
+    //   requestIdRef.current = requestAnimationFrame(animate)
+    // })
 
     // add event listeners
     const canvas = canvasRef.current
@@ -251,12 +266,15 @@ const Carousel = forwardRef((props, ref) => {
 })
 
 const loadImages = (urls, callback) => {
-  let imgArr = []
+  let imgArr = new Array(urls.length)
+  let loadedImagesCount = 0
   urls.forEach((url, idx) => {
     const img = new Image()
     img.onload = () => {
-      imgArr.push(img)
-      if (imgArr.length === urls.length) callback(imgArr)
+      imgArr[idx] = img
+      loadedImagesCount++
+      console.log(`Image loaded: ${url}, index: ${idx}`)
+      if (loadedImagesCount === urls.length) callback(imgArr)
     }
     img.src = url
   })
