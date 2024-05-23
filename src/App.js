@@ -8,8 +8,7 @@ import Home from "./components/Home"
 import Skills from "./components/Skills"
 import Projects from "./components/Projects"
 import Contact from "./components/Contact"
-import Popup from "./components/Popup"
-
+import Popup from "./components/subComponents/Popup"
 function App() {
   const [popup, setPopup] = useState({ active: false, to: "" })
   const location = useLocation()

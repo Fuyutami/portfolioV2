@@ -1,4 +1,4 @@
-import { keyframes } from 'styled-components'
+import { keyframes } from "styled-components"
 
 export const skillsFlyIn = keyframes`
  0% {transform:translateX(-200%);}
@@ -192,4 +192,13 @@ export const blinkExit = keyframes`
 		opacity: 0;
 
 	}
+`
+
+export const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 `

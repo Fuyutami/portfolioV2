@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
+import { fadeIn } from "../../other/animations"
+
 const Container = styled.div`
   background-color: #fff;
   position: absolute;
@@ -11,6 +13,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  animation: ${fadeIn} 1s forwards;
 `
 
 const Popup = (props) => {
