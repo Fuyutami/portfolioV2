@@ -230,11 +230,11 @@ const Skills = (props) => {
             >
               {(state) => (
                 <Annotation
-                  title={annotation.skillToDisplay.title}
-                  description={annotation.skillToDisplay.description}
+                  skill={annotation.skillToDisplay}
                   side={annotation.sideToRender}
                   state={state}
                   sectionState={props.state}
+                  setPopup={props.setPopup}
                 />
               )}
             </Transition>

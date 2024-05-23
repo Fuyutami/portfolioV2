@@ -210,6 +210,8 @@ const Carousel = forwardRef((props, ref) => {
         y: e.clientY || e.touches[0].clientY,
       }
     }
+
+    // initialize carousel
     const initializeCarousel = () => {
       loadImages(props.images, (images) => {
         updateStateWithImages(images)
@@ -229,14 +231,6 @@ const Carousel = forwardRef((props, ref) => {
 
     // initialize carousel
     initializeCarousel()
-
-    // Load images and start animating
-    // loadImages(props.images, (images) => {
-    //   stateRef.current.items.forEach((item, idx) => {
-    //     item.image = images[idx]
-    //   })
-    //   requestIdRef.current = requestAnimationFrame(animate)
-    // })
 
     // add event listeners
     const canvas = canvasRef.current

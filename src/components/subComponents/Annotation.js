@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled, { keyframes } from "styled-components"
 import { blinkEnter1, blinkEnter2, blinkExit } from "../../other/animations"
 import Theme from "../../other/Theme"
@@ -29,6 +29,12 @@ const Container = styled.div`
 
   @media (max-width: 768px) {
     transform: scale(0.8);
+  }
+
+  @media (max-width: 670px) {
+    width: 180px;
+    height: 70px;
+    transform: scale(0.8) translateX(-20px);
   }
 `
 const GraphicsWrapper = styled.div`
@@ -162,6 +168,10 @@ const Btn = styled.button`
 `
 
 const Annotation = (props) => {
+  const handleClick = (e) => {
+    e.stopPropagation()
+    props.setPopup({ active: true, to: "project-" + props.skill.name })
+  }
   return (
     <Container
       side={props.side}
@@ -170,12 +180,14 @@ const Annotation = (props) => {
     >
       <Content>
         <TitleWrapper state={props.state}>
-          <Title src={props.title} />
+          <Title src={props.skill.title} />
         </TitleWrapper>
         <Description state={props.state}>
-          {props.description}
+          {props.skill.description}
 
-          <Btn>view latest</Btn>
+          {props.skill.showProjects && (
+            <Btn onClick={handleClick}>view latest</Btn>
+          )}
         </Description>
       </Content>
       <GraphicsWrapper state={props.state}>
