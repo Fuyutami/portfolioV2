@@ -172,8 +172,8 @@ const Contact = (props) => {
   const form = React.createRef()
   const navigate = useNavigate()
   const [state, setState] = useState({
-    user_name: "",
-    user_email: "",
+    from_name: "",
+    from_email: "",
     message: "",
     nameValid: false,
     emailValid: false,
@@ -185,7 +185,7 @@ const Contact = (props) => {
 
   useEffect(() => {
     validate()
-  }, [state.user_name, state.user_email, state.message])
+  }, [state.from_name, state.from_email, state.message])
 
   useEffect(() => {
     if (state.submitted === false) return
@@ -202,8 +202,8 @@ const Contact = (props) => {
   }
 
   const validate = () => {
-    const nameIsValid = state.user_name != ""
-    const emailIsValid = /\S+@\S+\.\S+/.test(state.user_email.toLowerCase())
+    const nameIsValid = state.from_name != ""
+    const emailIsValid = /\S+@\S+\.\S+/.test(state.from_email.toLowerCase())
     const messageIsValid = state.message != ""
     const formIsValid = nameIsValid && emailIsValid && messageIsValid
 
@@ -265,7 +265,7 @@ const Contact = (props) => {
                   showError={state.showErrors}
                   isValid={state.nameValid}
                   type="text"
-                  name="user_name"
+                  name="from_name"
                   value={state.name}
                   onChange={(e) => {
                     handleUserInput(e)
@@ -285,7 +285,7 @@ const Contact = (props) => {
                   showError={state.showErrors}
                   isValid={state.emailValid}
                   type="email"
-                  name="user_email"
+                  name="from_email"
                   onChange={(e) => {
                     handleUserInput(e)
                   }}
@@ -309,6 +309,12 @@ const Contact = (props) => {
                   }}
                 />
               </FieldL>
+              <input
+                type="hidden"
+                name="subject"
+                id="subject"
+                value="New Message from Portfolio!"
+              />
               <Btn
                 type="submit"
                 disabled={!state.formValid}
