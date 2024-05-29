@@ -67,7 +67,6 @@ const Frame = (props) => {
   const [navbarSpace, setNavbarSpace] = React.useState(0)
 
   useEffect(() => {
-    console.log(height)
     if (height < 400) {
       setNavbarSpace(90)
     } else {

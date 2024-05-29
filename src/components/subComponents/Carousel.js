@@ -10,6 +10,8 @@ import { degrees_to_radians, euclideanDistance } from "../../other/utils"
 
 const Canvas = styled.canvas`
   background-color: transparent;
+  width: 100%; /* Display size */
+  height: auto; /* Maintain aspect ratio */
 `
 
 const Carousel = forwardRef((props, ref) => {
@@ -127,10 +129,6 @@ const Carousel = forwardRef((props, ref) => {
     }
   }
 
-  useEffect(() => {
-    console.log("size from the carousel: " + props.width)
-  }, [props.width])
-
   const animate = () => {
     if (!canvasRef.current) return
     const ctx = canvasRef.current.getContext("2d")
@@ -229,11 +227,20 @@ const Carousel = forwardRef((props, ref) => {
     stateRef.current.size.height =
       stateRef.current.size.width * props.images.length
 
+    // Set canvas resolution (increase density)
+    const canvas = canvasRef.current
+    const scale = window.devicePixelRatio || 2
+    canvas.width = stateRef.current.size.width * scale
+    canvas.height = stateRef.current.size.height * scale
+    canvas.style.width = `${stateRef.current.size.width}px`
+    canvas.style.height = `${stateRef.current.size.height}px`
+    const ctx = canvas.getContext("2d")
+    ctx.scale(scale, scale)
+
     // initialize carousel
     initializeCarousel()
 
     // add event listeners
-    const canvas = canvasRef.current
     canvas.addEventListener("pointerdown", handlePointerDown)
     canvas.addEventListener("pointerup", handlePointerUp)
     canvas.addEventListener("pointerenter", handlePointerEnter)
@@ -256,7 +263,7 @@ const Carousel = forwardRef((props, ref) => {
     }
   }, [])
 
-  return <Canvas {...stateRef.current.size} ref={canvasRef} />
+  return <Canvas ref={canvasRef} />
 })
 
 const loadImages = (urls, callback) => {
@@ -267,7 +274,6 @@ const loadImages = (urls, callback) => {
     img.onload = () => {
       imgArr[idx] = img
       loadedImagesCount++
-      console.log(`Image loaded: ${url}, index: ${idx}`)
       if (loadedImagesCount === urls.length) callback(imgArr)
     }
     img.src = url

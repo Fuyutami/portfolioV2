@@ -202,3 +202,12 @@ export const fadeIn = keyframes`
     opacity: 1;
   }
 `
+
+export const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`

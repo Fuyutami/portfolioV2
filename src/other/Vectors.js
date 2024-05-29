@@ -1370,3 +1370,191 @@ export const TextDesigned = (props) => {
     </svg>
   )
 }
+
+export const IconClose = (props) => {
+  return (
+    <svg
+      {...props}
+      width={props.size || 64}
+      height={props.size || 64}
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M8.76489 0.565097C8.01143 -0.188366 6.78982 -0.188366 6.03636 0.565097L0.565099 6.03635C-0.188365 6.78982 -0.188367 8.01142 0.565096 8.76488L22.436 30.6357C23.1894 31.3892 23.1894 32.6108 22.436 33.3643L0.565098 55.2351C-0.188365 55.9886 -0.188365 57.2102 0.565099 57.9636L6.03636 63.4349C6.78982 64.1884 8.01143 64.1884 8.76489 63.4349L30.6357 41.5641C31.3892 40.8106 32.6108 40.8106 33.3643 41.5641L55.2351 63.4349C55.9886 64.1883 57.2102 64.1883 57.9636 63.4349L63.4349 57.9636C64.1884 57.2102 64.1884 55.9885 63.4349 55.2351L41.5641 33.3643C40.8106 32.6108 40.8106 31.3892 41.5641 30.6357L63.4349 8.76491C64.1884 8.01144 64.1884 6.78984 63.4349 6.03638L57.9636 0.565119C57.2102 -0.188344 55.9886 -0.188344 55.2351 0.56512L33.3643 22.4359C32.6108 23.1894 31.3892 23.1894 30.6357 22.4359L8.76489 0.565097Z"
+        fill={props.fill || "#000000"}
+      />
+    </svg>
+  )
+}
+
+export const IconPlay = (props) => {
+  return (
+    <svg
+      {...props}
+      width={props.size || "64"}
+      height={props.size || "64"}
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M61 30.268C62.3333 31.0378 62.3333 32.9623 61 33.7321L19 57.9808C17.6667 58.7506 16 57.7883 16 56.2487L16 7.75128C16 6.21168 17.6667 5.24944 19 6.01924L61 30.268Z"
+        fill={props.fill || "white"}
+      />
+    </svg>
+  )
+}
+
+export const IconPause = (props) => {
+  return (
+    <svg
+      {...props}
+      width={props.size || "64"}
+      height={props.size || "64"}
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        x="13"
+        y="12"
+        width="14"
+        height="40"
+        rx="3"
+        fill={props.fill || "white"}
+      />
+      <rect
+        x="37"
+        y="12"
+        width="14"
+        height="40"
+        rx="3"
+        fill={props.fill || "white"}
+      />
+    </svg>
+  )
+}
+
+export const IconRewind = (props) => {
+  return (
+    <svg
+      {...props}
+      width={props.size || "64"}
+      height={props.size || "64"}
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M27.6718 30.2772C26.3596 31.0509 26.3596 32.9491 27.6718 33.7228L48.1717 45.8102C49.5049 46.5964 51.1875 45.6352 51.1875 44.0874L51.1875 19.9126C51.1875 18.3648 49.5049 17.4036 48.1717 18.1898L27.6718 30.2772Z"
+        fill={props.fill || "white"}
+      />
+      <path
+        d="M7.5 30.268C6.16667 31.0378 6.16667 32.9623 7.5 33.7321L28.5 45.8564C29.8333 46.6262 31.5 45.664 31.5 44.1244L31.5 19.8756C31.5 18.336 29.8333 17.3738 28.5 18.1436L7.5 30.268Z"
+        fill={props.fill || "white"}
+      />
+    </svg>
+  )
+}
+
+export const IconForward = (props) => {
+  return (
+    <svg
+      {...props}
+      width={props.size || "64"}
+      height={props.size || "64"}
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M36.3282 30.2772C37.6404 31.0509 37.6404 32.9491 36.3282 33.7228L15.8283 45.8102C14.4951 46.5964 12.8125 45.6352 12.8125 44.0874L12.8125 19.9126C12.8125 18.3648 14.4951 17.4036 15.8283 18.1898L36.3282 30.2772Z"
+        fill={props.fill || "white"}
+      />
+      <path
+        d="M56.5 30.268C57.8333 31.0378 57.8333 32.9623 56.5 33.7321L35.5 45.8564C34.1667 46.6262 32.5 45.664 32.5 44.1244L32.5 19.8756C32.5 18.336 34.1667 17.3738 35.5 18.1436L56.5 30.268Z"
+        fill={props.fill || "white"}
+      />
+    </svg>
+  )
+}
+
+export const VideoTimeGraphics = (props) => {
+  return (
+    <svg
+      {...props}
+      width="511"
+      height="30"
+      viewBox="0 0 511 30"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M511 28.0291H356.478L329.449 1L181.554 1L154.525 28.0291H0"
+        stroke={props.strokeColor || "black"}
+        stroke-width={props.strokeWidth || "2"}
+      />
+    </svg>
+  )
+}
+
+export const StripesGraphics = (props) => {
+  return (
+    <svg
+      {...props}
+      width="88"
+      height="15"
+      viewBox="0 0 88 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M43.9112 0H48.3096L34.4515 14.2793H30.0513L43.9112 0Z"
+        fill={props.fill || "white"}
+      />
+      <path
+        d="M38.8517 14.2793L52.7098 0H57.1099L43.2519 14.2793H38.8517Z"
+        fill={props.fill || "white"}
+      />
+      <path d="M0 4.43994L4.30957 0H0V4.43994Z" fill={props.fill || "white"} />
+      <path
+        d="M13.1099 0L0 13.5068V8.97363L8.70978 0H13.1099Z"
+        fill={props.fill || "white"}
+      />
+      <path
+        d="M8.05042 14.2793L21.9103 0H17.5101L3.65027 14.2793H8.05042Z"
+        fill={props.fill || "white"}
+      />
+      <path
+        d="M30.7107 0L16.8508 14.2793H12.4506L26.3105 0H30.7107Z"
+        fill={props.fill || "white"}
+      />
+      <path
+        d="M25.6511 14.2793L39.511 0H35.1108L21.2509 14.2793H25.6511Z"
+        fill={props.fill || "white"}
+      />
+      <path
+        d="M87.9112 0H88V4.44189L78.4515 14.2793H74.0513L87.9112 0Z"
+        fill={props.fill || "white"}
+      />
+      <path
+        d="M82.8517 14.2793L88 8.97559V13.5088L87.2519 14.2793H82.8517Z"
+        fill={props.fill || "white"}
+      />
+      <path
+        d="M52.0504 14.2793L65.9103 0H61.5101L47.6502 14.2793H52.0504Z"
+        fill={props.fill || "white"}
+      />
+      <path
+        d="M74.7107 0L60.8508 14.2793H56.4506L70.3105 0H74.7107Z"
+        fill={props.fill || "white"}
+      />
+      <path
+        d="M69.6511 14.2793L83.511 0H79.1108L65.2509 14.2793H69.6511Z"
+        fill={props.fill || "white"}
+      />
+    </svg>
+  )
+}

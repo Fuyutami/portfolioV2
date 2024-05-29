@@ -56,10 +56,6 @@ const BottomBar = (props) => {
   const rects = calcRects(width, x, 7, mounted)
 
   useEffect(() => {
-    console.log(height)
-  }, [height])
-
-  useEffect(() => {
     const timer = setTimeout(() => {
       setMounted(true)
     }, 3000)

@@ -8,6 +8,10 @@ const Theme = {
   activeSkill: "#868686",
   accentColor: "#4CBAF6",
   frameWidth: "2px",
+  videoFrameColor1: "#808080",
+  videoFrameColor2: "#808080",
+  videoDescriptionColor1: "#ACACAC",
+  videoDescriptionColor2: "#5A5A5A",
 }
 
 export default Theme
