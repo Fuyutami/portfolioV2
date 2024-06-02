@@ -56,7 +56,7 @@ const Popup = (props) => {
                 return (
                   <VideoViewer
                     // dark={false}
-                    source="/videos/3d_animation.mp4"
+                    source="/videos/3D_animation.mp4"
                     setPopup={props.setPopup}
                     closePopup={closePopup}
                     description={
