@@ -409,12 +409,14 @@ const VideoViewer = ({
   }
 
   const handleMouseDown = (e) => {
+    if (e.button !== 0) return
     setIsDragging(true)
     setStartX(e.clientX)
     setStartTime(videoRef.current.currentTime)
   }
 
   const handleMouseUp = (e) => {
+    if (e.button !== 0) return
     if (videoRef.current) {
       setIsDragging(false)
 
