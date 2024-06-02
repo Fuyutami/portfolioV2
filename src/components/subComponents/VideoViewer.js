@@ -334,6 +334,19 @@ const StateIndicator = styled.div`
   z-index: 3000;
 `
 
+const VideoLoadingText = styled.p`
+  color: ${(props) =>
+    props.dark ? Theme.videoFrameColor1 : Theme.videoFrameColor2};
+  font-family: "Gruppo", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+`
+
 const VideoViewer = ({
   source,
   closePopup,
@@ -482,6 +495,7 @@ const VideoViewer = ({
             onMouseLeave={handleMouseLeave}
             onClick={(e) => e.stopPropagation()}
           />
+          <VideoLoadingText>Loading video...</VideoLoadingText>
           {!isFullscreen && (
             <Frame>
               <Corners>
