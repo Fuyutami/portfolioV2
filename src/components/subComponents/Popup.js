@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components"
 
 import { fadeIn, fadeOut } from "../../other/animations"
 import VideoViewer from "./VideoViewer"
+import skills from "../../other/skills"
 
 const PopupAnimation = keyframes`
   from {
@@ -58,9 +59,26 @@ const Popup = (props) => {
                     source="/videos/3d_animation.mp4"
                     setPopup={props.setPopup}
                     closePopup={closePopup}
-                    description="This project is a complete recreation of a clip from Pixar Animation Studios' short film 'BURN-E.' All modeling, lighting, and animation were done using Blender, while texturing was completed using Quixel Mixer."
+                    description={
+                      skills.find((skill) => skill.name === "3d")
+                        .projectDescription
+                    }
                   />
                 )
+              case "project-games":
+                return (
+                  <VideoViewer
+                    dark={false}
+                    source="/videos/SodaHamsterVideo.mp4"
+                    setPopup={props.setPopup}
+                    closePopup={closePopup}
+                    description={
+                      skills.find((skill) => skill.name === "games")
+                        .projectDescription
+                    }
+                  />
+                )
+
               default:
                 return <p>{props.popup.to}</p>
             }
