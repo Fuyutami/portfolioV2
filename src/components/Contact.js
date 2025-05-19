@@ -219,7 +219,7 @@ const Contact = (props) => {
   const submitHandler = (e) => {
     e.preventDefault()
 
-    const serviceID = "service_mq782jj"
+    const serviceID = "service_wzdymwg"
     const templateID = "template_rsav1ts"
     const publicKey = "gLwGwzjAcw_VDdD3O"
     emailjs
